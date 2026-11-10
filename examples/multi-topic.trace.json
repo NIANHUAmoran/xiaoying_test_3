@@ -1,0 +1,32 @@
+{
+  "source_output": "multi-topic.output.json",
+  "request_id": "test3-multi-topic",
+  "question": "报销期限多久、在哪个平台提交？",
+  "mode": "mock",
+  "model": "offline-mock",
+  "generated_at": "2026-11-10T17:21:36.940420+00:00",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "model",
+      "action": "respond",
+      "arguments": {
+        "kind": "clarify",
+        "evidence": []
+      },
+      "basis": "问题主题或属性不明确，需要补充",
+      "observation": {
+        "ok": true,
+        "answer": "问题指向不明确，暂时无法可靠作答。",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "缺少明确制度、产品或问题主题"
+        ],
+        "clarification_question": "请补充制度或产品名称，以及想了解的具体问题。",
+        "status": "needs_clarification"
+      },
+      "next_action": null
+    }
+  ]
+}

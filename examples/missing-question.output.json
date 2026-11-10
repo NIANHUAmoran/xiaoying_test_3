@@ -1,0 +1,32 @@
+{
+  "request_id": "test3-missing-question",
+  "question": "",
+  "status": "needs_information",
+  "answer": "请提供需要查询的问题。",
+  "citations": [],
+  "conflicts": [],
+  "gaps": [
+    "缺少问题"
+  ],
+  "clarification_question": "请提供具体问题。",
+  "mode": "validation",
+  "model": null,
+  "model_calls": 0,
+  "termination": "input_incomplete",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "runtime",
+      "action": "validate_input",
+      "arguments": {},
+      "basis": "问题为空",
+      "observation": {
+        "missing": [
+          "question"
+        ]
+      },
+      "next_action": null
+    }
+  ],
+  "generated_at": "2026-11-10T17:21:36.712851+00:00"
+}

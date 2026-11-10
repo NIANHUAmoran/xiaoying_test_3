@@ -1,0 +1,65 @@
+{
+  "checked_at": "2026-11-11T01:18:14.936804+08:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "scenario": "normal",
+      "model": "qwen3.8-max",
+      "status": "answered",
+      "steps": 3,
+      "read_document_ids": [
+        "D01"
+      ],
+      "citations": 1,
+      "all_citations_exact": true,
+      "queries": [
+        "报销期限"
+      ],
+      "first_search_empty": false,
+      "query_rewritten": false,
+      "conflict_values": []
+    },
+    {
+      "scenario": "conflict",
+      "model": "qwen3.8-max",
+      "status": "needs_clarification",
+      "steps": 5,
+      "read_document_ids": [
+        "D01",
+        "D02"
+      ],
+      "citations": 2,
+      "all_citations_exact": true,
+      "queries": [
+        "报销期限",
+        "报销期限 适用范围 优先级 补充规定"
+      ],
+      "first_search_empty": false,
+      "query_rewritten": true,
+      "conflict_values": [
+        "15 天",
+        "30 天"
+      ]
+    },
+    {
+      "scenario": "paraphrase",
+      "model": "qwen3.8-max",
+      "status": "answered",
+      "steps": 5,
+      "read_document_ids": [
+        "D01",
+        "D03"
+      ],
+      "citations": 1,
+      "all_citations_exact": true,
+      "queries": [
+        "费用单据最晚什么时候交",
+        "报销期限"
+      ],
+      "first_search_empty": true,
+      "query_rewritten": true,
+      "conflict_values": []
+    }
+  ],
+  "scope": "Three actual model runs; not a statistical reliability or open-domain entailment claim."
+}

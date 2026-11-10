@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-11T01:21:49.617984+08:00",
+  "all_passed": true,
+  "root_entries": [
+    ".env.example",
+    ".gitignore",
+    "README.md",
+    "data",
+    "docs",
+    "examples",
+    "requirements.txt",
+    "src",
+    "tests"
+  ],
+  "documents": [
+    "01-requirements.md",
+    "02-solution.md",
+    "03-evaluation.md",
+    "04-ai-usage.md",
+    "05-retrospective.md"
+  ],
+  "evidence_groups": 18,
+  "offline_runs": 15,
+  "live_paths": 3,
+  "unit_tests": 35,
+  "trace_matches_actual_output": true,
+  "source_citation_records_checked": 18,
+  "citation_text_and_versions_valid": true,
+  "citations_observed_in_successful_reads": true,
+  "answered_cases_have_full_topic_coverage": true,
+  "six_required_scenarios_covered": true,
+  "document_replacement_changes_answer": true,
+  "query_rewrite_observed": true,
+  "context_followup_resolved": true,
+  "document_links_valid": true
+}

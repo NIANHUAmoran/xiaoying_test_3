@@ -1,0 +1,111 @@
+{
+  "source_output": "context.output.json",
+  "request_id": "test3-context",
+  "question": "那在哪个平台提交？",
+  "mode": "mock",
+  "model": "offline-mock",
+  "generated_at": "2026-11-10T17:21:35.929720+00:00",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "model",
+      "action": "search_documents",
+      "arguments": {
+        "query": "报销 那在哪个平台提交？"
+      },
+      "basis": "先检索问题相关文档",
+      "observation": {
+        "ok": true,
+        "matches": [
+          {
+            "doc_id": "D03",
+            "title": "报销平台操作 FAQ",
+            "version_date": "2026-08-15",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_platform"
+            ]
+          },
+          {
+            "doc_id": "D01",
+            "title": "费用报销管理办法",
+            "version_date": "2026-09-01",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_deadline"
+            ]
+          }
+        ],
+        "exhaustive": true
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "actor": "model",
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D03"
+      },
+      "basis": "检索仅有元数据，读取相关原文核实",
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D03",
+          "title": "报销平台操作 FAQ",
+          "version_date": "2026-08-15",
+          "scope": null,
+          "priority": null
+        },
+        "passages": [
+          {
+            "id": "P1",
+            "topic": "expense_platform",
+            "label": "报销提交平台",
+            "value": "财务自助服务平台",
+            "text": "员工应在财务自助服务平台提交报销申请。"
+          }
+        ]
+      },
+      "next_action": "respond"
+    },
+    {
+      "step": 3,
+      "actor": "model",
+      "action": "respond",
+      "arguments": {
+        "kind": "answer",
+        "evidence": [
+          {
+            "doc_id": "D03",
+            "passage_id": "P1",
+            "quote": "员工应在财务自助服务平台提交报销申请。"
+          }
+        ]
+      },
+      "basis": "已读取相关原文且结论一致，使用来源支持的事实回答",
+      "observation": {
+        "ok": true,
+        "answer": "文档 D03（版本 2026-08-15）原文：员工应在财务自助服务平台提交报销申请。",
+        "citations": [
+          {
+            "doc_id": "D03",
+            "passage_id": "P1",
+            "version_date": "2026-08-15",
+            "quote": "员工应在财务自助服务平台提交报销申请。",
+            "scope": null
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "clarification_question": null,
+        "status": "answered"
+      },
+      "next_action": null
+    }
+  ]
+}

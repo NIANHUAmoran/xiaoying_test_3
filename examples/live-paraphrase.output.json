@@ -1,0 +1,177 @@
+{
+  "request_id": "test3-live-paraphrase",
+  "question": "费用单据最晚什么时候交",
+  "resolved_topic": "expense_deadline",
+  "mode": "live",
+  "model": "qwen3.8-max",
+  "generated_at": "2026-11-10T17:16:03.064260+00:00",
+  "max_steps": 16,
+  "model_calls": 5,
+  "termination": "responded",
+  "read_document_ids": [
+    "D01",
+    "D03"
+  ],
+  "tool_errors": [],
+  "answer": "文档 D01（版本 2026-09-01）原文：员工应在费用发生后 30 天内提交报销申请。",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "passage_id": "P1",
+      "version_date": "2026-09-01",
+      "quote": "员工应在费用发生后 30 天内提交报销申请。",
+      "scope": null
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "clarification_question": null,
+  "status": "answered",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "model",
+      "action": "search_documents",
+      "arguments": {
+        "query": "费用单据最晚什么时候交"
+      },
+      "basis": "First search uses the user's exact query to retrieve relevant expense deadline documents.",
+      "observation": {
+        "ok": true,
+        "matches": [],
+        "exhaustive": true
+      },
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "actor": "model",
+      "action": "search_documents",
+      "arguments": {
+        "query": "报销期限"
+      },
+      "basis": "The initial exact query returned no matches, so use the canonical query to search again.",
+      "observation": {
+        "ok": true,
+        "matches": [
+          {
+            "doc_id": "D01",
+            "title": "费用报销管理办法",
+            "version_date": "2026-09-01",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_deadline"
+            ]
+          },
+          {
+            "doc_id": "D03",
+            "title": "报销平台操作 FAQ",
+            "version_date": "2026-08-15",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_platform"
+            ]
+          }
+        ],
+        "exhaustive": true
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 3,
+      "actor": "model",
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      },
+      "basis": "Search for 报销期限 returned D01 with topic expense_deadline, which is directly relevant to the deadline question.",
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D01",
+          "title": "费用报销管理办法",
+          "version_date": "2026-09-01",
+          "scope": null,
+          "priority": null
+        },
+        "passages": [
+          {
+            "id": "P1",
+            "topic": "expense_deadline",
+            "label": "报销期限",
+            "value": "30 天",
+            "text": "员工应在费用发生后 30 天内提交报销申请。"
+          }
+        ]
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 4,
+      "actor": "model",
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D03"
+      },
+      "basis": "D03 was retrieved for the deadline query and should be checked before answering.",
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D03",
+          "title": "报销平台操作 FAQ",
+          "version_date": "2026-08-15",
+          "scope": null,
+          "priority": null
+        },
+        "passages": [
+          {
+            "id": "P1",
+            "topic": "expense_platform",
+            "label": "报销提交平台",
+            "value": "财务自助服务平台",
+            "text": "员工应在财务自助服务平台提交报销申请。"
+          }
+        ]
+      },
+      "next_action": "respond"
+    },
+    {
+      "step": 5,
+      "actor": "model",
+      "action": "respond",
+      "arguments": {
+        "kind": "answer",
+        "evidence": [
+          {
+            "doc_id": "D01",
+            "passage_id": "P1",
+            "quote": "员工应在费用发生后 30 天内提交报销申请。"
+          }
+        ]
+      },
+      "basis": "已读取的《费用报销管理办法》明确报销申请期限为费用发生后30天内。",
+      "observation": {
+        "ok": true,
+        "answer": "文档 D01（版本 2026-09-01）原文：员工应在费用发生后 30 天内提交报销申请。",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "passage_id": "P1",
+            "version_date": "2026-09-01",
+            "quote": "员工应在费用发生后 30 天内提交报销申请。",
+            "scope": null
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "clarification_question": null,
+        "status": "answered"
+      },
+      "next_action": null
+    }
+  ]
+}

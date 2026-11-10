@@ -1,0 +1,137 @@
+[
+  {
+    "scenario": "normal",
+    "status": "answered",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 1,
+    "steps": 3,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "conflict",
+    "status": "needs_clarification",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 2,
+    "steps": 5,
+    "data": "data/conflict.world.json"
+  },
+  {
+    "scenario": "outside",
+    "status": "out_of_scope",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 0,
+    "steps": 3,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "paraphrase",
+    "status": "answered",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 1,
+    "steps": 4,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "context",
+    "status": "answered",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 1,
+    "steps": 3,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "tool-failure",
+    "status": "tool_failure",
+    "mode": "mock",
+    "exit_code": 1,
+    "citations": 0,
+    "steps": 3,
+    "data": "data/tool-failure.world.json"
+  },
+  {
+    "scenario": "partial-failure",
+    "status": "tool_failure",
+    "mode": "mock",
+    "exit_code": 1,
+    "citations": 1,
+    "steps": 4,
+    "data": "data/partial-failure.world.json"
+  },
+  {
+    "scenario": "transient-failure",
+    "status": "answered",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 1,
+    "steps": 4,
+    "data": "data/transient-failure.world.json"
+  },
+  {
+    "scenario": "changed-document",
+    "status": "answered",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 1,
+    "steps": 3,
+    "data": "data/changed-document.world.json"
+  },
+  {
+    "scenario": "resolved-conflict",
+    "status": "answered",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 1,
+    "steps": 4,
+    "data": "data/resolved-conflict.world.json"
+  },
+  {
+    "scenario": "ambiguous",
+    "status": "needs_clarification",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 0,
+    "steps": 1,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "missing-question",
+    "status": "needs_information",
+    "mode": "validation",
+    "exit_code": 0,
+    "citations": 0,
+    "steps": 1,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "unsupported-product",
+    "status": "out_of_scope",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 0,
+    "steps": 3,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "multi-topic",
+    "status": "needs_clarification",
+    "mode": "mock",
+    "exit_code": 0,
+    "citations": 0,
+    "steps": 1,
+    "data": "data/world.json"
+  },
+  {
+    "scenario": "step-limit",
+    "status": "incomplete",
+    "mode": "mock",
+    "exit_code": 1,
+    "citations": 1,
+    "steps": 2,
+    "data": "data/world.json"
+  }
+]

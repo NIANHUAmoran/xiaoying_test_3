@@ -1,0 +1,86 @@
+{
+  "source_output": "tool-failure.output.json",
+  "request_id": "test3-tool-failure",
+  "question": "报销期限多久？",
+  "mode": "mock",
+  "model": "offline-mock",
+  "generated_at": "2026-11-10T17:21:36.043280+00:00",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "model",
+      "action": "search_documents",
+      "arguments": {
+        "query": "报销期限多久？"
+      },
+      "basis": "先检索问题相关文档",
+      "observation": {
+        "ok": true,
+        "matches": [
+          {
+            "doc_id": "D01",
+            "title": "费用报销管理办法",
+            "version_date": "2026-09-01",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_deadline"
+            ]
+          },
+          {
+            "doc_id": "D03",
+            "title": "报销平台操作 FAQ",
+            "version_date": "2026-08-15",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_platform"
+            ]
+          }
+        ],
+        "exhaustive": true
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "actor": "model",
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      },
+      "basis": "检索仅有元数据，读取相关原文核实",
+      "observation": {
+        "ok": false,
+        "error": "injected_tool_failure",
+        "retryable": false
+      },
+      "next_action": "respond"
+    },
+    {
+      "step": 3,
+      "actor": "model",
+      "action": "respond",
+      "arguments": {
+        "kind": "tool_failure",
+        "evidence": []
+      },
+      "basis": "查证工具失败，不能把未读取资料当作不存在",
+      "observation": {
+        "ok": true,
+        "answer": "文档检索或片段读取未成功完成，暂时无法可靠作答。",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "工具失败，资料查证未完成",
+          "未读取文档：D01"
+        ],
+        "clarification_question": null,
+        "status": "tool_failure"
+      },
+      "next_action": null
+    }
+  ]
+}

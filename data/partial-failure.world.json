@@ -1,0 +1,106 @@
+{
+  "documents": [
+    {
+      "id": "D01",
+      "title": "费用报销管理办法",
+      "version_date": "2026-09-01",
+      "scope": null,
+      "priority": null,
+      "keywords": [
+        "报销",
+        "报账",
+        "期限",
+        "时限",
+        "报销期限"
+      ],
+      "passages": [
+        {
+          "id": "P1",
+          "topic": "expense_deadline",
+          "label": "报销期限",
+          "value": "30 天",
+          "text": "员工应在费用发生后 30 天内提交报销申请。"
+        }
+      ]
+    },
+    {
+      "id": "D02",
+      "title": "费用报销补充规定",
+      "version_date": "2026-10-15",
+      "scope": null,
+      "priority": null,
+      "keywords": [
+        "报销",
+        "报账",
+        "期限",
+        "时限",
+        "报销期限"
+      ],
+      "passages": [
+        {
+          "id": "P1",
+          "topic": "expense_deadline",
+          "label": "报销期限",
+          "value": "15 天",
+          "text": "员工应在费用发生后 15 天内提交报销申请。"
+        }
+      ]
+    },
+    {
+      "id": "D03",
+      "title": "报销平台操作 FAQ",
+      "version_date": "2026-08-15",
+      "scope": null,
+      "priority": null,
+      "keywords": [
+        "报销",
+        "报账",
+        "平台",
+        "提交平台",
+        "提交渠道",
+        "哪里",
+        "系统"
+      ],
+      "passages": [
+        {
+          "id": "P1",
+          "topic": "expense_platform",
+          "label": "报销提交平台",
+          "value": "财务自助服务平台",
+          "text": "员工应在财务自助服务平台提交报销申请。"
+        }
+      ]
+    },
+    {
+      "id": "D04",
+      "title": "企业剪辑产品离线能力 FAQ",
+      "version_date": "2026-10-10",
+      "scope": null,
+      "priority": null,
+      "keywords": [
+        "产品",
+        "离线",
+        "断网",
+        "没网",
+        "没有网络",
+        "本地编辑"
+      ],
+      "passages": [
+        {
+          "id": "P1",
+          "topic": "product_offline",
+          "label": "产品离线能力",
+          "value": "支持离线本地编辑；云端素材同步需要联网",
+          "text": "企业剪辑产品支持离线本地编辑；云端素材同步需要联网。"
+        }
+      ]
+    }
+  ],
+  "failures": [
+    {
+      "tool": "read_document",
+      "doc_id": "D02",
+      "mode": "always"
+    }
+  ]
+}

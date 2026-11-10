@@ -1,0 +1,173 @@
+{
+  "request_id": "test3-resolved-conflict",
+  "question": "报销期限多久？",
+  "resolved_topic": "expense_deadline",
+  "mode": "mock",
+  "model": "offline-mock",
+  "generated_at": "2026-11-10T17:21:36.477890+00:00",
+  "max_steps": 16,
+  "model_calls": 4,
+  "termination": "responded",
+  "read_document_ids": [
+    "D01",
+    "D02"
+  ],
+  "tool_errors": [],
+  "answer": "文档 D01（版本 2026-09-01）原文：员工应在费用发生后 30 天内提交报销申请。",
+  "citations": [
+    {
+      "doc_id": "D01",
+      "passage_id": "P1",
+      "version_date": "2026-09-01",
+      "quote": "员工应在费用发生后 30 天内提交报销申请。",
+      "scope": null
+    }
+  ],
+  "conflicts": [],
+  "gaps": [],
+  "clarification_question": null,
+  "status": "answered",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "model",
+      "action": "search_documents",
+      "arguments": {
+        "query": "报销期限多久？"
+      },
+      "basis": "先检索问题相关文档",
+      "observation": {
+        "ok": true,
+        "matches": [
+          {
+            "doc_id": "D01",
+            "title": "费用报销管理办法",
+            "version_date": "2026-09-01",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_deadline"
+            ]
+          },
+          {
+            "doc_id": "D02",
+            "title": "费用报销补充规定",
+            "version_date": "2026-10-15",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_deadline"
+            ]
+          },
+          {
+            "doc_id": "D03",
+            "title": "报销平台操作 FAQ",
+            "version_date": "2026-08-15",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "expense_platform"
+            ]
+          }
+        ],
+        "exhaustive": true
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 2,
+      "actor": "model",
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D01"
+      },
+      "basis": "检索仅有元数据，读取相关原文核实",
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D01",
+          "title": "费用报销管理办法",
+          "version_date": "2026-09-01",
+          "scope": null,
+          "priority": null
+        },
+        "passages": [
+          {
+            "id": "P1",
+            "topic": "expense_deadline",
+            "label": "报销期限",
+            "value": "30 天",
+            "text": "员工应在费用发生后 30 天内提交报销申请。"
+          }
+        ]
+      },
+      "next_action": "read_document"
+    },
+    {
+      "step": 3,
+      "actor": "model",
+      "action": "read_document",
+      "arguments": {
+        "doc_id": "D02"
+      },
+      "basis": "检索仅有元数据，读取相关原文核实",
+      "observation": {
+        "ok": true,
+        "document": {
+          "doc_id": "D02",
+          "title": "费用报销补充规定",
+          "version_date": "2026-10-15",
+          "scope": null,
+          "priority": null
+        },
+        "passages": [
+          {
+            "id": "P1",
+            "topic": "expense_deadline",
+            "label": "报销期限",
+            "value": "30 天",
+            "text": "员工应在费用发生后 30 天内提交报销申请。"
+          }
+        ]
+      },
+      "next_action": "respond"
+    },
+    {
+      "step": 4,
+      "actor": "model",
+      "action": "respond",
+      "arguments": {
+        "kind": "answer",
+        "evidence": [
+          {
+            "doc_id": "D01",
+            "passage_id": "P1",
+            "quote": "员工应在费用发生后 30 天内提交报销申请。"
+          }
+        ]
+      },
+      "basis": "已读取相关原文且结论一致，使用来源支持的事实回答",
+      "observation": {
+        "ok": true,
+        "answer": "文档 D01（版本 2026-09-01）原文：员工应在费用发生后 30 天内提交报销申请。",
+        "citations": [
+          {
+            "doc_id": "D01",
+            "passage_id": "P1",
+            "version_date": "2026-09-01",
+            "quote": "员工应在费用发生后 30 天内提交报销申请。",
+            "scope": null
+          }
+        ],
+        "conflicts": [],
+        "gaps": [],
+        "clarification_question": null,
+        "status": "answered"
+      },
+      "next_action": null
+    }
+  ]
+}

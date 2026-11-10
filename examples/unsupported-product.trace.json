@@ -1,0 +1,86 @@
+{
+  "source_output": "unsupported-product.output.json",
+  "request_id": "test3-unsupported-product",
+  "question": "这个产品支持哪些支付方式？",
+  "mode": "mock",
+  "model": "offline-mock",
+  "generated_at": "2026-11-10T17:21:36.828096+00:00",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "model",
+      "action": "search_documents",
+      "arguments": {
+        "query": "这个产品支持哪些支付方式？"
+      },
+      "basis": "先检索问题相关文档",
+      "observation": {
+        "ok": true,
+        "matches": [
+          {
+            "doc_id": "D04",
+            "title": "企业剪辑产品离线能力 FAQ",
+            "version_date": "2026-10-10",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "product_offline"
+            ]
+          }
+        ],
+        "exhaustive": true
+      },
+      "next_action": "search_documents"
+    },
+    {
+      "step": 2,
+      "actor": "model",
+      "action": "search_documents",
+      "arguments": {
+        "query": "这个产品支持哪些支付方式？ 相关制度"
+      },
+      "basis": "补充检索后再判断资料缺口",
+      "observation": {
+        "ok": true,
+        "matches": [
+          {
+            "doc_id": "D04",
+            "title": "企业剪辑产品离线能力 FAQ",
+            "version_date": "2026-10-10",
+            "passage_ids": [
+              "P1"
+            ],
+            "topics": [
+              "product_offline"
+            ]
+          }
+        ],
+        "exhaustive": true
+      },
+      "next_action": "respond"
+    },
+    {
+      "step": 3,
+      "actor": "model",
+      "action": "respond",
+      "arguments": {
+        "kind": "not_found",
+        "evidence": []
+      },
+      "basis": "补查后仍无相关资料，无法可靠作答",
+      "observation": {
+        "ok": true,
+        "answer": "当前资料库未找到支持该问题的可靠资料，无法给出确定答案。",
+        "citations": [],
+        "conflicts": [],
+        "gaps": [
+          "资料库缺少相关主题或问题所需信息"
+        ],
+        "clarification_question": null,
+        "status": "out_of_scope"
+      },
+      "next_action": null
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "request_id": "test3-context",
+  "question": "那在哪个平台提交？",
+  "history": [
+    {
+      "role": "user",
+      "content": "报销期限多久？"
+    },
+    {
+      "role": "assistant",
+      "content": "请以制度原文为准。"
+    }
+  ]
+}

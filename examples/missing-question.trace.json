@@ -1,0 +1,23 @@
+{
+  "source_output": "missing-question.output.json",
+  "request_id": "test3-missing-question",
+  "question": "",
+  "mode": "validation",
+  "model": null,
+  "generated_at": "2026-11-10T17:21:36.712851+00:00",
+  "trace": [
+    {
+      "step": 1,
+      "actor": "runtime",
+      "action": "validate_input",
+      "arguments": {},
+      "basis": "问题为空",
+      "observation": {
+        "missing": [
+          "question"
+        ]
+      },
+      "next_action": null
+    }
+  ]
+}
